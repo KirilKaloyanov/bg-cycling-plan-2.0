@@ -156,7 +156,7 @@ class Conference extends Component {
             <br />
             За връзка с организаторите:
             <br />
-            <img src={mail} />
+            <img src={mail} alt=""/>
           </div>
           {this.state.registrationId && (
             <div>
