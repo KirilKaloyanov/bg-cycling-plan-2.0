@@ -94,6 +94,15 @@ class App extends React.Component {
             }
           />
           <Route
+            path="280afG4qf3Rcp"
+            element={
+              <>
+                <NavBack toggle={toggle} />
+                <Participants />
+              </>
+            }
+          />
+          <Route
             path="partners"
             element={
               <>
