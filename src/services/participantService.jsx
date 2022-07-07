@@ -12,5 +12,6 @@ export function registerParticipant(participant) {
     lastName: participant.lastName,
     email: participant.email,
     organisation: participant.organisation,
+    phone: participant.phone,
   });
 }

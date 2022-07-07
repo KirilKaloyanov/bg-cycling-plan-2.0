@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Joi from "joi-browser";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import Input from "./common/input";
 import { registerParticipant } from "../services/participantService";
 import mail from "./images/web-m.jpg";
@@ -13,6 +13,7 @@ class Conference extends Component {
       lastName: "",
       email: "",
       organisation: "",
+      phone: "",
     },
     errors: {},
     registrationId: "",
@@ -23,6 +24,7 @@ class Conference extends Component {
     lastName: Joi.string().required().max(30),
     email: Joi.string().email().max(96),
     organisation: Joi.string().max(256),
+    phone: Joi.string().max(25),
   };
 
   componentDidMount() {
@@ -37,6 +39,7 @@ class Conference extends Component {
       lastName: "",
       email: "",
       organisation: "",
+      phone: "",
     };
     const registrationId = "";
     this.setState({ account, registrationId });
@@ -75,7 +78,8 @@ class Conference extends Component {
     const result = Joi.validate(this.state.account, this.schema, {
       abortEarly: false,
     });
-    if (!result.error) return null;
+    if (!result.error || result.error.details[0].path[0] === "phone")
+      return null;
     let errors = {};
     if (result.error) {
       for (let item of result.error.details) {
@@ -123,14 +127,15 @@ class Conference extends Component {
   };
 
   render() {
-    const { firstName, lastName, email, organisation } = this.state.account;
+    const { firstName, lastName, email, organisation, phone } =
+      this.state.account;
     return (
       <div>
         <img src={path} alt="Bicycle path" className="image_path" />
         <div className="form_container">
           <h2 className="align_center">Национална велосипедна конференция</h2>
           <div className="text">
-          <br />
+            <br />
             На 3 ноември 2022 ще се проведе Национална велосипедна конференция,
             където ще бъде обсъден
             <Link to="/page"> Националния велосипеден план</Link>. На
@@ -156,14 +161,17 @@ class Conference extends Component {
             <br />
             За връзка с организаторите:
             <br />
-            <img src={mail} alt=""/>
+            <img src={mail} alt="" />
           </div>
           {this.state.registrationId && (
             <div>
               <h3 className="align_center">
                 Вие сте регистрирани за конференцията.
               </h3>
-              <button className="btn_arrow" onClick={this.handleNewRegistration}>
+              <button
+                className="btn_arrow"
+                onClick={this.handleNewRegistration}
+              >
                 Нова регистрация
               </button>
             </div>
@@ -171,10 +179,11 @@ class Conference extends Component {
           {!this.state.registrationId && (
             <form onSubmit={this.handleSubmit}>
               <h3 className="align_center">Форма за регистрация</h3>
-              {this.renderInput("firstName", "Име", firstName)}
-              {this.renderInput("lastName", "Фамилия", lastName)}
-              {this.renderInput("email", "E-mail", email)}
-              {this.renderInput("organisation", "Организация", organisation)}
+              {this.renderInput("firstName", "Име*", firstName)}
+              {this.renderInput("lastName", "Фамилия*", lastName)}
+              {this.renderInput("email", "E-mail*", email)}
+              {this.renderInput("organisation", "Организация*", organisation)}
+              {this.renderInput("phone", "Телефон", phone)}
               <button type="submit" className="btn_arrow">
                 Регистрирай се
               </button>
