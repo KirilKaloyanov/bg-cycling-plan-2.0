@@ -7,6 +7,7 @@ import MapRaw from "./components/mapraw";
 import Hero from "./components/common/hero";
 import Page from "./components/page";
 import Conference from "./components/conference";
+import Participants from "./components/participants";
 import Partners from "./components/partners";
 import Ambassadors from "./components/ambassadors";
 import Library from "./components/library";
