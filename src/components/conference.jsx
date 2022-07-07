@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import Joi from "joi-browser";
+import { Link } from 'react-router-dom';
 import Input from "./common/input";
 import { registerParticipant } from "../services/participantService";
+import mail from "./images/web-m.jpg";
+import path from "./images/babak.jpg";
 
 class Conference extends Component {
   state = {
@@ -122,41 +125,62 @@ class Conference extends Component {
   render() {
     const { firstName, lastName, email, organisation } = this.state.account;
     return (
-      <div className="form_container">
-        <h2 className="align_center">Национална велосипедна конференция</h2>
-        <div className="text">
+      <div>
+        <img src={path} alt="Bicycle path" className="image_path" />
+        <div className="form_container">
+          <h2 className="align_center">Национална велосипедна конференция</h2>
+          <div className="text">
           <br />
-          През м. октомври 2022 ще се проведе Национална велосипедна
-          конференция. На нея ще бъдат обсъдени Националния велосипеден план и
-          Схемата на Национална мрежа от велосипедни маршрути. <br />
-          <br />
-          Можете да се регистрирате за участие в конференцията като попълните
-          формата за участие. На посочен от Вас e-mail ще получите актуална
-          информация относно дата и мястото на провеждане, програмата и
-          лекторите на събитието.
-        </div>
-        {this.state.registrationId && (
-          <div>
-            <h3 className="align_center">
-              Вие сте регистрирани за конференцията.
-            </h3>
-            <button className="btn_arrow" onClick={this.handleNewRegistration}>
-              Нова регистрация
-            </button>
+            На 3 ноември 2022 ще се проведе Национална велосипедна конференция,
+            където ще бъде обсъден
+            <Link to="/page"> Националния велосипеден план</Link>. На
+            конференцията ще бъдат представени подробните трасета на Национална
+            мрежа от велосипедни маршрути. Можете да разгледате предварително{" "}
+            <Link to="/map">схемата на маршрутите</Link>.
+            <br />
+            <br />
+            Конференцията се организира от Българска асоциация за алтернативен
+            туризъм като част от проекта Дунавски велосипедни планове с
+            финансовата подкрепа на Програма за транснационално сътрудничество
+            Дунав 2014-2020.
+            <br />
+            <br />
+            Можете да се регистрирате за участие в конференцията като попълните
+            формата за участие. На посочен от Вас e-mail ще получите актуална
+            информация относно мястото на провеждане, програмата и лекторите на
+            събитието.
+            <br />
+            <br />
+            Предоставени данни няма да бъдат публикувани и ще се ползват
+            единствено за целите на организиране на конференцията.
+            <br />
+            За връзка с организаторите:
+            <br />
+            <img src={mail} />
           </div>
-        )}
-        {!this.state.registrationId && (
-          <form onSubmit={this.handleSubmit}>
-            <h3 className="align_center">Форма за регистрация</h3>
-            {this.renderInput("firstName", "Име", firstName)}
-            {this.renderInput("lastName", "Фамилия", lastName)}
-            {this.renderInput("email", "E-mail", email)}
-            {this.renderInput("organisation", "Организация", organisation)}
-            <button type="submit" className="btn_arrow">
-              Регистрирай се
-            </button>
-          </form>
-        )}
+          {this.state.registrationId && (
+            <div>
+              <h3 className="align_center">
+                Вие сте регистрирани за конференцията.
+              </h3>
+              <button className="btn_arrow" onClick={this.handleNewRegistration}>
+                Нова регистрация
+              </button>
+            </div>
+          )}
+          {!this.state.registrationId && (
+            <form onSubmit={this.handleSubmit}>
+              <h3 className="align_center">Форма за регистрация</h3>
+              {this.renderInput("firstName", "Име", firstName)}
+              {this.renderInput("lastName", "Фамилия", lastName)}
+              {this.renderInput("email", "E-mail", email)}
+              {this.renderInput("organisation", "Организация", organisation)}
+              <button type="submit" className="btn_arrow">
+                Регистрирай се
+              </button>
+            </form>
+          )}
+        </div>
       </div>
     );
   }
