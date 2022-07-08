@@ -94,6 +94,40 @@ export default function Page() {
         <h2 className="section heading">
           Презентации от срещите на работната група
         </h2>
+        <h3 className="date">15 юни 2022</h3>
+        <h3 className="meeting_heading">
+          Действия за развитие на велосипедни политики
+        </h3>
+        <div className="card_container">
+          <Card
+            link={baatUrl + "NCWG5/1.pdf"}
+            author="арх. Петя Донева"
+            title="Действия за развитие на велосипедни политики - мерки, отговорности, период на изпълнение"
+          />
+        </div>
+        <hr />
+        <h3 className="date">31 март 2022</h3>
+        <h3 className="meeting_heading">
+          Стандарти за велосипедна инфраструктура
+        </h3>
+        <div className="card_container">
+          <Card
+            link={baatUrl + "NCWG4/1.pdf"}
+            author="Кирил Калоянов"
+            title="Схема на национална веломрежа"
+          />
+          <Card
+            link={baatUrl + "NCWG4/2.pdf"}
+            author="арх. Петя Донева"
+            title="Национален велосипеден план - нормативни стандарти и предизвикателства"
+          />
+          <Card
+            link={baatUrl + "NCWG4/3.pdf"}
+            author="Радостина Петрова"
+            title="Каталог на инфраструктурни стандарти за Дунавска велосипедна мрежа"
+          />
+        </div>
+        <hr />
         <h3 className="date">25 ноември 2021</h3>
         <h3 className="meeting_heading">
           Визия на Национален велосипеден план
