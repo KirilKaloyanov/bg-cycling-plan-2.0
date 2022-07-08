@@ -12,20 +12,40 @@ const Participants = () => {
     getData();
   }, []);
 
-  participants.map((x) => console.log(x.lastName));
+  if (participants.length === 0) return <h1>... отивам до базата данни. След малко се връщам...</h1>;
+
 
   return (
     <div>
       {null || (
-        <ol>
-          {participants.map((x) => (
-            <li key={x._id}>
-              {[x.firstName, x.lastName, x.email, x.phone, x.organisation].join(
-                " | "
-              )}
-            </li>
-          ))}
-        </ol>
+        <div>
+        <h1>Регистрирали са се: {participants.length} участници.</h1>
+        <br />
+        <table>
+          <thead>
+            <tr>
+              <td>Име</td>
+              <td>Фамилия</td>
+              <td>email</td>
+              <td>Телефон</td>
+              <td>Организация</td>
+            </tr>
+          </thead>
+          <tbody>
+
+            {participants.map((x) => (
+              <tr key={x._id}>
+                <td>{x.firstName}</td>
+                <td>{x.lastName}</td>
+                <td>{x.email}</td>
+                <td>{x.phone}</td>
+                <td>{x.organisation}</td>
+              </tr>
+            ))}
+          </tbody>
+
+        </table>
+      </div>
       )}
     </div>
   );
