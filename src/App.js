@@ -57,7 +57,16 @@ class App extends React.Component {
           onReset={this.resetScroll}
         />
         <Routes>
-          <Route path="/" element={<Hero />} />
+        <Route path="/" element={
+            <>
+              <Hero />
+              <Ambassadors />
+              <Map />
+              <br />
+              <Conference />
+              <Partners />
+            </>
+            } />
           <Route
             path="page"
             element={

@@ -635,4 +635,6 @@ a {
 
 .leaflet-container {
   height: 500px;
+  position: relative;
+  z-index: 0;
 }

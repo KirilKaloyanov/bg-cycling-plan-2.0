@@ -2,9 +2,9 @@ const Ambassadors = () => {
   return (
     <div>
       <br />
-      <h1 className="align_center">
+      <h2 className="section heading">
         Посланици на каузата за повече хора на велосипед
-      </h1>
+      </h2>
       <br />
       <div className="video_container grid grid--1x2">
         <iframe
