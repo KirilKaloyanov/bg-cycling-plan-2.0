@@ -10,6 +10,7 @@ import Conference from "./components/conference";
 import Participants from "./components/participants";
 import Partners from "./components/partners";
 import Ambassadors from "./components/ambassadors";
+import Ambassador from "./components/ambassador";
 import Library from "./components/library";
 import dtpLogo from "./components/images/logoDTP.png";
 
@@ -60,7 +61,7 @@ class App extends React.Component {
         <Route path="/" element={
             <>
               <Hero />
-              <Ambassadors />
+              <Ambassador />
               <Map />
               <br />
               <Conference />
