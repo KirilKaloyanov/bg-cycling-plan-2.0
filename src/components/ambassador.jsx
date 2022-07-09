@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import bonevVideo from './images/bonev.mp4';
 
-const Ambassador = () => {
+const Ambassador = (props) => {
   return (
     <div>
 
@@ -17,7 +17,7 @@ const Ambassador = () => {
           <p>
             Борис Бонев е общински съветник в Столичния общински съвет и създател на гражданската платформа "Спаси София". Разговорът ни с него е част от инициативата Danube Cycling Ambassadors.
           </p>
-          <Link className="menu_link" to='ambassadors'>
+          <Link className="menu_link" to='ambassadors' onClick={props.onReset}>
             <button className="btn_arrow">Посланици</button>
           </Link>
         </div>
