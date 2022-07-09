@@ -104,7 +104,13 @@ export default function Page() {
             author="арх. Петя Донева"
             title="Действия за развитие на велосипедни политики - мерки, отговорности, период на изпълнение"
           />
+          <Card
+            link={baatUrl + "NCWG5/2.pdf"}
+            author="Радостина Петрова"
+            title="Национален велосипеден план: Финансиране — източници, консултации, участие"
+          />
         </div>
+
         <hr />
         <h3 className="date">31 март 2022</h3>
         <h3 className="meeting_heading">
