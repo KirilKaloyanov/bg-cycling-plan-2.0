@@ -565,8 +565,7 @@ a {
 }
 
 .video_container_yt {
-  width: 560px;
-  height: 315px;
+  width: 100%;
 }
 
 .video_description {
@@ -575,11 +574,10 @@ a {
 
 @media screen and (max-width: 600px) {
   .video_container_yt {
-    width: 300px;
-    height: 168.75px;
+    width: 100%;
   }
   .video_description {
-    width: 300px;
+    max-width: 300px;
   }
 }
 

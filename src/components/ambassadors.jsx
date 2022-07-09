@@ -1,20 +1,23 @@
+import sandov from './images/sandov.jpg';
+import bonev from './images/bonev.jpg';
+import simidchiev from './images/simidchiev.jpg';
+
 const Ambassadors = () => {
   return (
     <div>
+
       <br />
+
       <h2 className="section heading">
         Посланици на каузата за повече хора на велосипед
       </h2>
+
       <br />
+
       <div className="video_container grid grid--1x2">
-        <iframe
-          className="video_container_yt"
-          src="https://www.youtube.com/embed/mPzEmOx3Dyo"
-          title="YouTube video player"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        ></iframe>
+        <a href='https://www.youtube.com/watch?v=mPzEmOx3Dyo' target="_blank" rel="noreferrer">
+          <img src={sandov} alt="Link to a Youtube video" className="video_container_yt" />
+        </a>
         <div className="video_description">
           <h2>Борислав Сандов</h2>
           <p>
@@ -23,15 +26,12 @@ const Ambassadors = () => {
           </p>
         </div>
       </div>
+
       <div className="video_container grid grid--1x2">
-        <iframe
-          className="video_container_yt"
-          src="https://www.youtube.com/embed/NsCY0mnaOR4"
-          title="YouTube video player"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        ></iframe>
+        <a href='https://www.youtube.com/watch?v=NsCY0mnaOR4' target="_blank" rel="noreferrer">
+          <img src={simidchiev} alt="Link to a Youtube video" className="video_container_yt" />
+        </a>
+
         <div className="video_description">
           <h2>д-р Александър Симидчиев</h2>
           <p>
@@ -40,15 +40,12 @@ const Ambassadors = () => {
           </p>
         </div>
       </div>
+
       <div className="video_container grid grid--1x2">
-        <iframe
-          className="video_container_yt"
-          src="https://www.youtube.com/embed/uI_QCpMjId4"
-          title="YouTube video player"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        ></iframe>
+        <a href='https://www.youtube.com/watch?v=uI_QCpMjId4' target="_blank" rel="noreferrer">
+          <img src={bonev} alt="Link to a Youtube video" className="video_container_yt" />
+        </a>
+
         <div className="video_description">
           <h2>Борис Бонев</h2>
           <p>
@@ -57,6 +54,7 @@ const Ambassadors = () => {
           </p>
         </div>
       </div>
+
     </div>
   );
 };
