@@ -1,5 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
+import { hello } from './services/participantService';
 import NavBar from "./components/common/navbar";
 import NavBack from "./components/common/navback";
 import Map from "./components/map";
@@ -39,8 +40,9 @@ class App extends React.Component {
     this.setState(result);
   };
 
-  componentDidMount() {
+  async componentDidMount() {
     window.addEventListener("scroll", this.handleScroll);
+    await hello();
   }
 
   componentWillUnmount() {
