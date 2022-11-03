@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from 'react-router-dom';
 import { MapContainer, TileLayer, Popup, GeoJSON } from "react-leaflet";
 import nat1 from "../data/IskarStruma1.json";
 import nat2 from "../data/DunavChernoMore2.json";
