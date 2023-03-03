@@ -1,6 +1,6 @@
 class DocumentCard extends HTMLElement {
 
-    dtpUrl = "http://www.interreg-danube.eu/uploads/media/approved_project_" + this.getAttribute('link');
+    dtpUrl = this.getAttribute('link');
 
     connectedCallback() {
         const docCardTitle = document.createElement('div');
